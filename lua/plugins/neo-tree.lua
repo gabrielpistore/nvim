@@ -8,6 +8,6 @@ return {
     "3rd/image.nvim",
   },
   config = function()
-    vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal right<CR>", {})
+    vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left<CR>", {})
   end
 }
