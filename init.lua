@@ -1,2 +1,2 @@
-require("options")
+require("opts")
 require("config.lazy")
