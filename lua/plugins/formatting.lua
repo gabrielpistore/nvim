@@ -9,7 +9,6 @@ return {
       sources = {
         -- completion
         null_ls.builtins.completion.spell,
-
         -- formatting
         null_ls.builtins.formatting.stylua.with({
           condition = function(utils)
@@ -24,7 +23,6 @@ return {
           args = { "--reformat", "--indent", "2", "-" },
         }),
         null_ls.builtins.formatting.rubocop,
-
         -- diagnostics
         require("none-ls.diagnostics.eslint_d"),
         null_ls.builtins.diagnostics.djlint,
