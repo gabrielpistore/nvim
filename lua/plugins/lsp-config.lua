@@ -23,9 +23,7 @@ return {
           "ts_ls",
           "emmet_language_server",
           "tailwindcss",
-          "volar",
           "pyright",
-          "ruby_lsp",
         },
       })
     end,
@@ -40,10 +38,9 @@ return {
       lspconfig.emmet_language_server.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
-      lspconfig.volar.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
-      lspconfig.ruby_lsp.setup({ capabilities = capabilities })
 
+      -- keymaps
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})

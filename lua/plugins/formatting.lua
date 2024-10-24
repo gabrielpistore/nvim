@@ -17,16 +17,14 @@ return {
         }),
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.djlint.with({
           command = "djlint",
           args = { "--reformat", "--indent", "2", "-" },
         }),
-        null_ls.builtins.formatting.rubocop,
+        null_ls.builtins.formatting.isort,
         -- diagnostics
         require("none-ls.diagnostics.eslint_d"),
         null_ls.builtins.diagnostics.djlint,
-        null_ls.builtins.diagnostics.rubocop,
       },
     })
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
