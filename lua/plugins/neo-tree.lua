@@ -7,7 +7,8 @@ return {
     "MunifTanjim/nui.nvim",
     "3rd/image.nvim",
   },
+  lazy = false,
   config = function()
-    vim.keymap.set("n", "<leader>e", ":Neotree position=current<CR>", {})
+    vim.keymap.set("n", "<leader>e", ":Neotree reveal current<CR>", {})
   end,
 }
