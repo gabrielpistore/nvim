@@ -38,7 +38,7 @@ return {
       -- Lua
       lspconfig.lua_ls.setup({ capabilities = capabilities })
 
-      -- JS/TS
+      -- HTML, CSS, JS/TS
       local function organize_imports()
         local params = {
           command = "_typescript.organizeImports",
@@ -57,10 +57,12 @@ return {
           },
         },
       })
-
-      -- Web Stuff
       lspconfig.emmet_language_server.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
+
+      -- Python
+      lspconfig.pylsp.setup({ capabilities = capabilities })
+      lspconfig.ruff.setup({ capabilities = capabilities })
 
       -- Keymaps
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
