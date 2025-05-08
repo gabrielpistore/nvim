@@ -10,9 +10,10 @@ return {
         colors.hint = colors.orange
         colors.error = "#ff0000"
       end,
-      -- Borderless Telescope
       on_highlights = function(hl, c)
         local prompt = "#2d3149"
+
+        -- Borderless Telescope
         hl.TelescopeNormal = {
           bg = c.bg_dark,
           fg = c.fg_dark,
@@ -40,7 +41,12 @@ return {
           bg = c.bg_dark,
           fg = c.bg_dark,
         }
+        -- Neotree
+        hl.NeoTreeNormal = {
+          bg = c.none,
+        }
       end,
+      transparent = true,
     })
     vim.cmd([[colorscheme tokyonight]])
   end,
