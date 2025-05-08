@@ -1,5 +1,5 @@
 return {
-  -- indent blankline
+  -- Indent blankline
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
@@ -9,7 +9,7 @@ return {
       })
     end,
   },
-  -- lualine
+  -- Lualine
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -21,7 +21,7 @@ return {
       })
     end,
   },
-  -- noice
+  -- Noice
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -36,7 +36,7 @@ return {
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+          ["cmp.entry.get_documentation"] = true, -- Requires hrsh7th/nvim-cmp
         },
       },
       presets = {
