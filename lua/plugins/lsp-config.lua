@@ -35,6 +35,10 @@ return {
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+      -- Lua
+      lspconfig.lua_ls.setup({ capabilities = capabilities })
+
+      -- JS/TS
       local function organize_imports()
         local params = {
           command = "_typescript.organizeImports",
@@ -44,8 +48,6 @@ return {
         vim.lsp.buf.execute_command(params)
       end
 
-      lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.emmet_language_server.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
         commands = {
@@ -55,8 +57,12 @@ return {
           },
         },
       })
+
+      -- Web Stuff
+      lspconfig.emmet_language_server.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
 
+      -- Keymaps
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
