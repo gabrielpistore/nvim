@@ -53,12 +53,7 @@ return {
 
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
-        commands = {
-          OrganizeImports = {
-            organize_imports,
-            description = "Organize Imports",
-          },
-        },
+        commands = { OrganizeImports = { organize_imports, description = "Organize Imports" } },
       })
       lspconfig.emmet_language_server.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
