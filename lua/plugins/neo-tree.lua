@@ -9,6 +9,6 @@ return {
   },
   lazy = false,
   config = function()
-    vim.keymap.set("n", "<leader>e", ":Neotree reveal current<CR>", {})
+    vim.keymap.set("n", "<leader>e", ":Neotree reveal left<CR>", {})
   end,
 }
