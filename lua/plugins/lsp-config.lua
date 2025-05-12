@@ -27,7 +27,6 @@ return {
           "tailwindcss",
           "pylsp",
           "ruff",
-          "ruby_lsp",
         },
       })
     end,
@@ -61,9 +60,6 @@ return {
       -- Python
       lspconfig.pylsp.setup({ capabilities = capabilities })
       lspconfig.ruff.setup({ capabilities = capabilities })
-
-      -- Ruby / Rails
-      lspconfig.ruby_lsp.setup({ capabilities = capabilities })
 
       -- Keymaps
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
