@@ -27,6 +27,7 @@ return {
           "tailwindcss",
           "pylsp",
           "ruff",
+          "gopls",
         },
       })
     end,
@@ -50,16 +51,19 @@ return {
         vim.lsp.buf.execute_command(params)
       end
 
+      lspconfig.emmet_language_server.setup({ capabilities = capabilities })
+      lspconfig.tailwindcss.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
         commands = { OrganizeImports = { organize_imports, description = "Organize Imports" } },
       })
-      lspconfig.emmet_language_server.setup({ capabilities = capabilities })
-      lspconfig.tailwindcss.setup({ capabilities = capabilities })
 
       -- Python
       lspconfig.pylsp.setup({ capabilities = capabilities })
       lspconfig.ruff.setup({ capabilities = capabilities })
+
+      -- Golang
+      lspconfig.gopls.setup({ capabilities = capabilities })
 
       -- Keymaps
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
